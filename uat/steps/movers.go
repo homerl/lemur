@@ -11,8 +11,8 @@ import (
 )
 
 func init() {
-	addStep(`^I configure the (posix|s3) data mover$`, iConfigureADataMover)
-	addStep(`^the (posix|s3) data mover should be (running|stopped)$`, theDataMoverShouldBe)
+	addStep(`^I configure the (posix|s3|ali) data mover$`, iConfigureADataMover)
+	addStep(`^the (posix|s3|ali) data mover should be (running|stopped)$`, theDataMoverShouldBe)
 }
 
 func iConfigureADataMover(dmType string) error {

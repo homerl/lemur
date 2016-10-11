@@ -40,7 +40,7 @@ func (f *failedDelegate) fail(action string) error {
 	return fmt.Errorf("Unable to delegate %s action: No HSM drivers found.", action)
 }
 
-func (f *failedDelegate) Archive(filePath string) error {
+func (f *failedDelegate) Archive(filePath string, MyArchiveID string) error {
 	return f.fail("archive")
 }
 
@@ -64,8 +64,8 @@ type multiHsmDriver struct {
 	delegate HsmDriver
 }
 
-func (d *multiHsmDriver) Archive(filePath string) error {
-	return d.delegate.Archive(filePath)
+func (d *multiHsmDriver) Archive(filePath string, MyArchiveID string) error {
+	return d.delegate.Archive(filePath,MyArchiveID)
 }
 
 func (d *multiHsmDriver) Restore(filePath string) error {

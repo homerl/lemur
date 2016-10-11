@@ -32,6 +32,16 @@ type (
 		// These are per-scenario, unless otherwise configured
 		S3Bucket string
 		S3Prefix string
+		S3Region string	
+		AliRegion string
+		AliBucket string
+		AliPrefix string
+		AliEndpoint string
+		MyArchiveID string
+		MyTimeout string
+		Myproxy string
+		Partsize string
+		Routines string
 
 		cleanupFunctions []cleanupFn
 		workdir          string
@@ -108,6 +118,7 @@ func (s *ScenarioContext) createWorkdir() {
 
 	s.AddCleanup(func() error {
 		debug.Printf("Cleaning up %s", s.workdir)
+		return nil
 		return os.RemoveAll(s.workdir)
 	})
 }
@@ -118,7 +129,7 @@ func (s *ScenarioContext) Workdir() string {
 	s.setup.Do(func() {
 		s.createWorkdir()
 	})
-
+	debug.Printf("s.workdir-%s",s.workdir)
 	return s.workdir
 }
 

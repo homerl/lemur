@@ -12,7 +12,7 @@ import (
 // e.g. lfs hsm_*, ldmc, etc.
 type HsmDriver interface {
 	// Archive store's the file's data in the archive backend
-	Archive(string) error
+	Archive(string, string) error
 	// Restore explicitly restores the file
 	Restore(string) error
 	// Remove removes the restored file from the archive backend
@@ -41,6 +41,7 @@ const (
 
 	// HsmReleased indicates that the file is archived and released
 	HsmReleased HsmState = "released"
+
 )
 
 func (h HsmState) String() string {

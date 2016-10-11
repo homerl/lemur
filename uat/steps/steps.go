@@ -5,7 +5,7 @@
 package steps
 
 // HSMTestFileKey is the prefix/key used to generate and refer to the test file
-const HSMTestFileKey = "HSM-test-file"
+var HSMTestFileKey = "HSM-file"
 
 // Bleah. This is what godog expects, though.
 type handlerFn interface{}
