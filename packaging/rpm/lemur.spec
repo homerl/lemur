@@ -14,7 +14,7 @@ License: GPLv2
 Summary: Lustre HSM Tools - Lustre HSM Agent
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: golang >= 1.6
+BuildRequires: golang >= 1.4
 BuildRequires: pandoc
 Requires: lustre >= %{?MIN_LUSTRE_VERSION}%{?!MIN_LUSTRE_VERSION:2.6.0}
 %{?systemd_requires}

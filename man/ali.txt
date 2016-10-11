@@ -1,0 +1,23 @@
+1. Please run tool as
+   ENABLE_DEBUG=true sudo -E /usr/libexec/lemur-testing/lemur-uat-runner  /root/ali.feature
+
+2. feature file example is put on https://github.com/lihaofd/lemur/blob/master/uat/features/ali.feature 
+
+
+3. Please set up Ali environment on ~/.lhsmd-config as below example
+
+ali_access_key_id = ""
+ali_access_key_secret = ""
+ali_bucket = "testbucket"
+ali_prefix = "testfolder"
+ali_endpoint = "oss-cn-shanghai.aliyuncs.com"
+timeout = "-1"
+partsize = "10"
+routines = "8"
+archiveid = "1"
+myproxy = ""
+
+
+
+
+
